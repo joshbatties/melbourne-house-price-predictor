@@ -30,6 +30,8 @@ Each instance has a value associated with the:
     - lattitude	
     - longtitude
     - price
+You can use the model by:
+    - TODO
 
 This dataset is a snapshot of a dataset from  https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot
 Which is based on scraped data from Domain.com.au between 2016-2018
