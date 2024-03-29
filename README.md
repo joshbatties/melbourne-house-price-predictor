@@ -15,13 +15,8 @@ The main steps of the project are:
 
     6. Evaluate the final model on the test set.
 
-You can use the model by:
-
-    1. TODO
-
-    2. TODO
-    
-    3. TODO
+You can use the model by running the script: 
+>>> python predict.py
 
 # Data
 The input dataset is a melb_housing.csv created by Joshua Batties
@@ -29,7 +24,6 @@ The input dataset is a melb_housing.csv created by Joshua Batties
 It contains 9399 instances of a sale of a house in Melbourne between 2016-2018.
 Each instance has a value associated with the:
     - suburb median price 
-    - number of rooms	
     - distance from CBD	
     - number of bedrooms	
     - number of bathrooms	
