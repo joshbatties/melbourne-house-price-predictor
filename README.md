@@ -41,6 +41,7 @@ I also created a column for the median house price in the suburb.
 Median House Prices were taken for each suburb in 2017 from https://discover.data.vic.gov.au/dataset/victorian-property-sales-report-median-house-by-suburb-time-series
 
 All the suburb names in the original dataset are replaced with the median house price for that suburb in 2017.
+Then this is converted to a categorical attribute which has ranges for the median price in $100,000 intervals.
 
 
 
