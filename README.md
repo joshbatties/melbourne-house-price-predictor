@@ -16,7 +16,9 @@ The main steps of the project are:
     6. Evaluate the final model on the test set.
 
 You can use the model by:
-    - TODO
+    1. TODO
+    2. TODO
+    3. TODO
 
 # Data
 The input dataset is a melb_housing.csv created by Joshua Batties
