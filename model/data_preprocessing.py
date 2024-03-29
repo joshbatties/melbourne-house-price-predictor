@@ -40,6 +40,14 @@ class HousingPreprocessor:
         self.strat_test_set = None
         self.full_pipeline = None  # Keep the fitted pipeline for transforming test data
 
+    def bin_suburb_median(self):
+        """
+        Bins the suburb median prices into predefined categories.
+        """
+        bins = [0, 500000, 1000000, 1500000, 2000000, np.inf]
+        labels = ['0-500k', '500k-1M', '1M-1.5M', '1.5M-2M', '2M+']
+        self.housing_df['suburb_median'] = pd.cut(self.housing_df['suburb_median'], bins=bins, labels=labels)
+
     def stratified_split(self, column, test_size=0.2):
         """
         Splits the dataset into a stratified training set and test set based on the specified column.

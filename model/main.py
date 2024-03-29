@@ -23,9 +23,7 @@ def main():
     preprocessor = HousingPreprocessor(housing)
 
     # Bin suburb median prices into categories for stratified sampling
-    bins = [0, 500000, 1000000, 1500000, 2000000, np.inf]
-    labels = ['0-500k', '500k-1M', '1M-1.5M', '1.5M-2M', '2M+']
-    housing['suburb_median'] = pd.cut(housing['suburb_median'], bins=bins, labels=labels)
+    preprocessor.bin_suburb_median()
 
     # Perform a stratified split based on the 'suburb_median' column
     preprocessor.stratified_split(column="suburb_median", test_size=0.2)
