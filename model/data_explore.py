@@ -1,7 +1,12 @@
 """
-This module contains the HousingExploration class designed for exploring and visualizing housing data. It provides methods to display basic information about a housing dataset, descriptive statistics, and visualizations including histograms and scatterplots to understand the distribution of data and the relationship between different variables, especially focusing on geographical distribution of prices.
+This module contains the HousingExploration class designed for exploring and visualizing housing data. 
+It provides methods to display basic information about a housing dataset, descriptive statistics, and visualizations 
+including histograms and scatterplots to understand the distribution of data 
+and the relationship between different variables, especially focusing on geographical distribution of prices.
 
-The visualizations are intended to assist in identifying trends, outliers, and patterns in the housing market, using both raw and transformed data for more insightful analyses. Logarithmic transformations are applied where necessary to improve the interpretability of skewed data.
+The visualizations are intended to assist in identifying trends, outliers, and patterns in the housing market, 
+using both raw and transformed data for more insightful analyses. 
+Logarithmic transformations are applied where necessary to improve the interpretability of skewed data.
 
 Example usage:
     # Display basic DataFrame information
