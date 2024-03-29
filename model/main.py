@@ -6,6 +6,7 @@ from data_load import HousingData
 from data_explore import HousingExploration
 from data_preprocessing import HousingPreprocessor
 from model_training import ModelTrainer
+from model_tuning import ModelTuner
 
 def main():
 
@@ -41,7 +42,18 @@ def main():
     trainer.display_scores('Decision Tree')
     trainer.display_scores('Random Forest')
 
-    
+    # Hyperparameter tuning for the best model (Random Forest here as an example)
+    tuner = ModelTuner(housing_prepared, housing_labels)
+    tuner.tune_random_forest()
+
+    # Prepare the test set
+    X_test = preprocessor.strat_test_set.drop("price", axis=1)
+    y_test = preprocessor.strat_test_set["price"].copy()
+    X_test_prepared = preprocessor.prepare_data_for_ml(X_test, transform_only=True)
+
+    # Final model evaluation on the test set
+    tuner.evaluate_on_test_set(X_test_prepared, y_test)
+
 
 
     

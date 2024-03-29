@@ -1,5 +1,29 @@
-# Next, we will create a Python file named data_preprocessing.py for data preprocessing tasks 
-# including splitting the dataset, feature engineering, and preparing the data for machine learning models.
+"""
+This module contains the HousingPreprocessor class, designed to facilitate the preprocessing of housing data. 
+It includes functionality for splitting the dataset into stratified training and testing sets, 
+and for applying a series of preprocessing steps to the data, including handling missing values and feature scaling.
+
+The preprocessing pipeline is built using scikit-learn's Pipeline and ColumnTransformer classes, 
+ensuring a robust and scalable approach to data preparation. 
+This module is particularly useful for preparing housing data where numerical features require normalization 
+and missing values need to be imputed.
+
+Key Features:
+- Stratified splitting of the dataset based on a specified column to ensure representative training and testing sets.
+- A preprocessing pipeline that includes median imputation for missing values and standard scaling for numerical features.
+- The ability to transform new data using the fitted pipeline, facilitating easy preparation of data for model predictions.
+
+
+Example Usage:
+    # Initialize the preprocessor
+    preprocessor = HousingPreprocessor(housing_df)
+
+    # Perform a stratified split based on a specific column
+    preprocessor.stratified_split(column='suburb_median', test_size=0.2)
+
+    # Prepare the training data for machine learning
+    housing_prepared, housing_labels = preprocessor.prepare_data_for_ml()
+"""
 
 from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
 from sklearn.impute import SimpleImputer
