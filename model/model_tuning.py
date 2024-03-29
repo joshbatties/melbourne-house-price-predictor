@@ -47,8 +47,8 @@ class ModelTuner:
         """
 
         param_grid = [
-            {'n_estimators': [3, 10, 30], 'max_features': [2, 4, 6, 8]},
-            {'bootstrap': [False], 'n_estimators': [3, 10], 'max_features': [2, 3, 4]},
+            {'n_estimators': [5, 20, 50], 'max_features': [2, 4, 7, 10]},
+            {'bootstrap': [False], 'n_estimators': [5, 20], 'max_features': [2, 5, 10]},
         ]
         forest_reg = RandomForestRegressor()
         grid_search = GridSearchCV(forest_reg, param_grid, cv=5,
@@ -56,7 +56,6 @@ class ModelTuner:
                                    return_train_score=True)
         grid_search.fit(self.housing_prepared, self.housing_labels)
         self.best_model = grid_search.best_estimator_
-        print(f"Best parameters: {grid_search.best_params_}")
 
     def evaluate_on_test_set(self, X_test_prepared, y_test):
         """
@@ -89,7 +88,12 @@ class ModelTuner:
         # Confidence interval calculation
         confidence = 0.95
         squared_errors = (final_predictions - y_test) ** 2
-        confidence_interval = np.sqrt(stats.t.interval(confidence, len(squared_errors) - 1,
-                                                       loc=squared_errors.mean(),
-                                                       scale=stats.sem(squared_errors)))
+        lower_bound, upper_bound = stats.t.interval(confidence, len(squared_errors) - 1,
+                                                      loc=squared_errors.mean(),
+                                                      scale=stats.sem(squared_errors))
+        lower_bound = np.sqrt(lower_bound) if lower_bound > 0 else 0
+        upper_bound = round(np.sqrt(upper_bound), 2)
+        confidence_interval = (lower_bound, upper_bound)    
+        
         print(f"95% confidence interval for the RMSE: {confidence_interval}")
+        print(f"We can say with 95% certainty that the true error for our price prediction is not more than ${upper_bound}")

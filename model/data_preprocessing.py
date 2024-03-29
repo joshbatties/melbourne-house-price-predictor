@@ -44,8 +44,8 @@ class HousingPreprocessor:
         """
         Bins the suburb median prices into predefined categories.
         """
-        bins = [0, 500000, 1000000, 1500000, 2000000, np.inf]
-        labels = ['0-500k', '500k-1M', '1M-1.5M', '1.5M-2M', '2M+']
+        bins = [0, 500000, 600000, 700000, 800000, 900000, 1000000, 1100000, 1200000, 1300000, 1400000, 1500000, np.inf]
+        labels = ['0-500k', '500k-600k', '600k-700k', '700k-800k', '800k-900k', '900k-1M', '1M-1.1M', '1.1M-1.2M', '1.2M-1.3M', '1.3M-1.4M', '1.4M-1.5M', '1.5M+']
         self.housing_df['suburb_median'] = pd.cut(self.housing_df['suburb_median'], bins=bins, labels=labels)
 
     def stratified_split(self, column, test_size=0.2):

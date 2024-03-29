@@ -78,12 +78,12 @@ class HousingExploration:
         housing_df['log_price'] = np.log(housing_df['price'] + 1)
         
         # List of columns to plot, including the newly transformed ones
-        columns_to_plot = ['rooms', 'distance', 'bedrooms', 'bathrooms', 'cars', 'log_landsize', 'lattitude', 'longtitude', 'log_price']
+        columns_to_plot = ['distance', 'bedrooms', 'bathrooms', 'cars', 'log_landsize', 'latitude', 'longitude', 'log_price']
         
         # Number of bins for each histogram: Customized based on the data's nature
         bins_dict = {
-            'rooms': 10, 'distance': 20, 'bedrooms': 10, 'bathrooms': 8, 'cars': 10, 
-            'log_landsize': 20, 'lattitude': 20, 'longtitude': 20, 'log_price': 20
+        'distance': 20, 'bedrooms': 10, 'bathrooms': 8, 'cars': 10, 
+            'log_landsize': 20, 'latitude': 20, 'longitude': 20, 'log_price': 20
         }
         
         # Plotting
@@ -108,7 +108,7 @@ class HousingExploration:
         fig, ax = plt.subplots(figsize=(10, 7))
         # Applying a logarithmic transformation to the price for color mapping
         prices_log = np.log(housing_df["price"])
-        scatter = ax.scatter(housing_df["longtitude"], housing_df["lattitude"], alpha=0.4,
+        scatter = ax.scatter(housing_df["longitude"], housing_df["latitude"], alpha=0.4,
                              s=20,  # Using a fixed size for simplicity
                              c=prices_log, cmap=plt.get_cmap("jet"))
         plt.title("Scatterplot of Housing Location and Log-Scaled Price")
