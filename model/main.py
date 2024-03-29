@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from data_load import HousingData
 from data_explore import HousingExploration
 from data_preprocessing import HousingPreprocessor
+from model_training import ModelTrainer
 
 def main():
 
@@ -30,6 +31,18 @@ def main():
 
     # Prepare the training data
     housing_prepared, housing_labels = preprocessor.prepare_data_for_ml()
+
+    # Model training and evaluation
+    trainer = ModelTrainer(housing_prepared, housing_labels)
+    trainer.train_and_evaluate()
+    
+    # Display the Cross Validation scores for each model
+    trainer.display_scores('Linear Regression')
+    trainer.display_scores('Decision Tree')
+    trainer.display_scores('Random Forest')
+
+    
+
 
     
 
