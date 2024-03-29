@@ -55,11 +55,5 @@ def main():
     tuner.evaluate_on_test_set(X_test_prepared, y_test)
 
 
-
-    
-
-
-
-
 if __name__ == "__main__":
     main()
