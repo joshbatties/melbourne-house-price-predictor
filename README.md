@@ -15,7 +15,7 @@ The main steps of the project are:
 
     6. Evaluate the final model on the test set.
 
-You can use the model by running the script: 
+You can use the model by running the script and following the prompts: 
 >>> python predict.py
 
 # Data
