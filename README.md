@@ -17,7 +17,9 @@ The main steps of the project are:
 
 You can use the model by:
     1. TODO
+    
     2. TODO
+    
     3. TODO
 
 # Data
