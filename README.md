@@ -16,8 +16,9 @@ The main steps of the project are:
     6. Evaluate the final model on the test set.
 
 You can use the model by:
+
     1. TODO
-    
+
     2. TODO
     
     3. TODO
