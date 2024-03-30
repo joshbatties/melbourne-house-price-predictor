@@ -45,6 +45,10 @@ Median House Prices were taken for each suburb in 2017 from https://discover.dat
 All the suburb names in the original dataset are replaced with the median house price for that suburb in 2017.
 Then this is converted to a categorical attribute which has ranges for the median price in $100,000 intervals.
 
+TODO:
+
+- Input validation for the predict.py
+- Research potenital solutions for allowing user to input a address and that will then return all the inputs for the predict.py
 
 
 
