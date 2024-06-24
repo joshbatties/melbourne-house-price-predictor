@@ -19,7 +19,7 @@ You can use the model by running the script and following the prompts:
 >>> python predict.py
 
 # Data
-The input dataset is a melb_housing.csv created by Joshua Batties
+The input dataset is melb_housing.csv created by Joshua Batties
 
 It contains 9399 instances of a sale of a house in Melbourne between 2016-2018.
 Each instance has a value associated with the:
