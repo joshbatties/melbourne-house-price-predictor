@@ -34,7 +34,7 @@ Each instance has a value associated with the:
     - price
 
 This dataset is a snapshot of a dataset from  https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot
-Which is based on scraped data from Domain.com.au between 2016-2018
+Which is based on scraped data from Domain.com.au between 2016-2018.
 I have removed the suburb, address, method, seller, date, postcode, building area, year built, council, region and property count columns.
 
 I have removed all rows all instances of "unit" or "townhouse" so my model only outputs predictions for houses.
